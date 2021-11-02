@@ -15,8 +15,8 @@ Wine.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    guest: {
-      type: DataTypes.DATE,
+    guest_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     vintage: {
