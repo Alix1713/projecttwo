@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     }
   });
  // GET one wine
-  router.get('/wine/:id', async (req, res) => {
+  router.get('/:id', async (req, res) => {
     try {
       const wineData = await wine.findByPk(req.params.id);
   

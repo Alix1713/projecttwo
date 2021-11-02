@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET one menu item
-router.get('/menu/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
       const menuData = await Menu.findByPk(req.params.id, {
         include: [
