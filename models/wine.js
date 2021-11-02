@@ -15,7 +15,7 @@ Wine.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    starting_date: {
+    guest: {
       type: DataTypes.DATE,
       allowNull: false,
     },
