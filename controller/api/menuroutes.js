@@ -27,8 +27,12 @@ router.get('/menu/:id', async (req, res) => {
           },
         ],
       });
+    } catch (err) {
+res.status(400).json(err);
+  }
   });
 
+//post menu item
   router.post('/', async (req, res) => {
     try {
       const menuData = await Menu.create(req.body);
@@ -37,7 +41,41 @@ router.get('/menu/:id', async (req, res) => {
       res.status(400).json(err);
     }
   });
-  
 
+  // UPDATE a menu item
+router.put('/:id', async (req, res) => {
+  try {
+    const menuData = await Menu.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!menuData[0]) {
+      res.status(404).json({ message: 'No menu item with this id!' });
+      return;
+    }
+    res.status(200).json(menuData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+  // DELETE a menu item nobody likes your gluten free rice cakes KAREN
+  router.delete('/:id', async (req, res) => {
+    try {
+      const menuData = await Menu.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      if (!menuData) {
+        res.status(404).json({ message: 'No menu item with this id!' });
+        return;
+      }
+      res.status(200).json(menuData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
   
   module.exports = router;
