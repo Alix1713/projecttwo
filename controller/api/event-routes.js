@@ -16,6 +16,5 @@ const sequelize = require('../config/connetion');
 
       },
     post_id:
-
-
- })
+      
+  })
