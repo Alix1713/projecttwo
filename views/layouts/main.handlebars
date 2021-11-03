@@ -1,26 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
- <!--needs css-->
-</head>
+<title>Event Planner</title>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
 
 <body>
+  <h1> EVENT PLANNER NEEDS PROJECT NAME AND STYLING</h1>
+  <h2>Login?/Logout</h2>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Create your event</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/users">Add Guests</a></li><!--How to link these?-->
+        <li><a href="/menu">Plan Menu</a></li><!--How to link these?-->
+        <li><a href="collapsible.html">Wine List</a></li><!--How to link these?-->
+      </ul>
+    </div>
+  </nav>
+        
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      User Registry
+      Put landing page contents here
     </h1>
   </header>
   <main class="container container-fluid mt-5">
     <!-- Render the contents of the sub layout here -->
     {{{ body }}}
   </main>
-  <footer>
-      
-  </footer>
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Made by:</h5>
+                <p class="grey-text text-lighten-4">Leonardo Gutierrez, George Sandoval, and Alix Friedman</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">GitHub</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/Leog888">Leonardo Gutierrez</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/gsandoval09">George Sandoval</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/Alix1713">Alix Friedman</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            Made for UC Berkeley Full Stack Bootcamp
+            <a class="grey-text text-lighten-4 right" href="https://extension.berkeley.edu/">UC Berkeley</a>
+            </div>
+          </div>
+        </footer>
 </body>
-
+ <script type="text/javascript" src="js/materialize.min.js"></script><!--script for materialize-->
 </html>
