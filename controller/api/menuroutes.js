@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Menu, Wine, Guests } = require('../../models');
+const { Menu, Wine, User } = require('../../models');
 console.log(Menu);
 // //get the whole menu
 // router.get('/', async (req, res) => {
