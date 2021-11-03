@@ -17,7 +17,10 @@ router.get('user', async (req,res) =>
     res.render('user')
 })
 
-
+router.get('wine' , async (req,res) =>
+{
+    res.render('wine')
+})
 
 
 module.exports = router;
