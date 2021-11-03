@@ -17,10 +17,14 @@ router.get('user', async (req,res) =>
     res.render('user')
 })
 
-router.get('wine' , async (req,res) =>
+router.get('wine', async (req,res) =>
 {
     res.render('wine')
 })
 
+router.get('event', async (req,res) =>
+{
+    res.render('event')
+})
 
 module.exports = router;
