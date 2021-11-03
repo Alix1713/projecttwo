@@ -1,5 +1,3 @@
-// Leo 
-
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
