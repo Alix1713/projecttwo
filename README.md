@@ -1,5 +1,5 @@
 # Cheers: an event planning app
-Cheers! The first thing that comes to mind when celebrating. We developed this application in hopes to bring some ease to users like you aroun the times when being at ease doesnt come so...well, easy. This applicaton is designed to give users like yourself access to update your event plannign scheudla. Whether it be holiday planing, birthdya planning, first communion and more, Cheers is here to make planning out for your enxt event as easy as possible. 
+Cheers! The first thing that comes to mind when celebrating. We developed this application in hopes to bring some ease to users like you aroun the times when being at ease doesnt come so...well, easy. This applicaton is designed to give users like yourself access to update your event plannign scheudla. Whether you are holiday planning, birthday planning, first communion planning and more, Cheers is here to make planning out for your next event as easy as possible. 
 
 
 
@@ -36,14 +36,16 @@ Cheers! The first thing that comes to mind when celebrating. We developed this a
 ## Authors
 
 * **George Sandoval** 
+* **Alix Friedman**
+* **Leo Gutierrez**
 
 - [Link to Github](https://github.com/gsandoval09)
 
 
-- [Link to Github]()
+- [Link to Github](https://github.com/Alix1713)
 
 
-- [Link to Github]()
+- [Link to Github](https://github.com/Leog888)
 
 
 
