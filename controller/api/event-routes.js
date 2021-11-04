@@ -9,6 +9,7 @@ router.post('/', async, (req, res) => {
         console.log(req.body)
         const eventData = await Event.create({
 
+
         });
         res.status(200).json(eventData)
     }catch (err) {
@@ -59,3 +60,4 @@ router.put('/:id', async (req, res) => {
     });
 
     module.exports = router;
+
