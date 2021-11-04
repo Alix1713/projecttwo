@@ -49,13 +49,13 @@ const eventFormHandler = async (event) => {
 document.querySelector('#eventAdd').addEventListener('click',eventFormHandler);
 
 // User
-const userFromHandler = async (event) => {
+const userFormHandler = async (event) => {
     event.preventDefault();
 
 const userId = document.querySelector('#user_id').ariaValueMax.trim();
 
 const user = document.querySelector('#user').ariaValueMax.trim();
-if (user) {
+if (user && userId) {
     const response = await fetch('/api/user', {
         method: 'POST',
         body: JSON.stringify({user}),
@@ -67,6 +67,27 @@ if (user) {
         alert('Failed to log in');
     }}};
 
-    document.querySelector('#userAdd').addEventListener('click', userFromHandler);
+    document.querySelector('#userAdd').addEventListener('click', userFormHandler);
 
+// Guest
+
+const guestFormHandler = async (event) => {
+    event.preventDefault();
+
+    const guest = document.querySelector('#user_id').ariaValueMax.trim();
+
+    const email = document.querySelector('#email').ariaValueMax.trim();
+    if (guest && email) {
+        const response = await fetch('/api/user', {
+            method: 'POST',
+            body: JSON.stringify({guest}),
+            headers: {'Content-Type': 'application/json'},
+    });
+    if(response.ok){
+        document.location.replace('/');
+    }else {
+        alert('Failed to log in');
+    }}};
+
+    document.querySelector('#GuestAdd').addEventListener('click',guestFormHandler);
 
