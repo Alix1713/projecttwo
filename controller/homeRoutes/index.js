@@ -10,7 +10,7 @@ res.render('homepage')
 router.get('/menu', async (req,res) =>
 {
     res.render('menu')
-})
+
 
 router.get('/user', async (req,res) =>
 {
