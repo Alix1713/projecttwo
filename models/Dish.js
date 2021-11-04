@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Menu extends Model {}
+class Dish extends Model {}
 
-Menu.init(
+Dish.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -18,6 +18,7 @@ Menu.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      foreignKey: true,
     },
     description: {
       type: DataTypes.STRING,
@@ -32,4 +33,4 @@ Menu.init(
   }
 );
 
-module.exports = Menu;
+module.exports = Dish;
