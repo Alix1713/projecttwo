@@ -52,13 +52,18 @@ document.querySelector('#eventAdd').addEventListener('click',eventFormHandler);
 const userFormHandler = async (event) => {
     event.preventDefault();
 
-const userId = document.querySelector('#user_id').ariaValueMax.trim();
+const email = document.querySelector('#email').ariaValueMax.trim();
+
 
 const user = document.querySelector('#user').ariaValueMax.trim();
 if (user && userId) {
+
+const password = document.querySelector('#password').ariaValueMax.trim();
+if (email && password) {
+
     const response = await fetch('/api/user', {
         method: 'POST',
-        body: JSON.stringify({user}),
+        body: JSON.stringify({email, password}),
         headers: {'Content-Type': 'application/json'},
     });
     if(response.ok){
@@ -67,7 +72,11 @@ if (user && userId) {
         alert('Failed to log in');
     }}};
 
+
     document.querySelector('#userAdd').addEventListener('click', userFormHandler);
+
+    document.querySelector('#login').addEventListener('click', userFromHandler);
+
 
 // Guest
 
