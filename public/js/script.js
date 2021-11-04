@@ -49,13 +49,18 @@ const eventFormHandler = async (event) => {
 document.querySelector('#eventAdd').addEventListener('click',eventFormHandler);
 
 // User
-const userFromHandler = async (event) => {
+const userFormHandler = async (event) => {
     event.preventDefault();
 
 const email = document.querySelector('#email').ariaValueMax.trim();
 
+
+const user = document.querySelector('#user').ariaValueMax.trim();
+if (user && userId) {
+
 const password = document.querySelector('#password').ariaValueMax.trim();
 if (email && password) {
+
     const response = await fetch('/api/user', {
         method: 'POST',
         body: JSON.stringify({email, password}),
@@ -67,6 +72,31 @@ if (email && password) {
         alert('Failed to log in');
     }}};
 
+
+    document.querySelector('#userAdd').addEventListener('click', userFormHandler);
+
     document.querySelector('#login').addEventListener('click', userFromHandler);
 
+
+// Guest
+
+const guestFormHandler = async (event) => {
+    event.preventDefault();
+
+    const guest = document.querySelector('#user_id').ariaValueMax.trim();
+
+    const email = document.querySelector('#email').ariaValueMax.trim();
+    if (guest && email) {
+        const response = await fetch('/api/user', {
+            method: 'POST',
+            body: JSON.stringify({guest}),
+            headers: {'Content-Type': 'application/json'},
+    });
+    if(response.ok){
+        document.location.replace('/');
+    }else {
+        alert('Failed to log in');
+    }}};
+
+    document.querySelector('#GuestAdd').addEventListener('click',guestFormHandler);
 
