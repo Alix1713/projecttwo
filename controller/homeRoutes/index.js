@@ -12,4 +12,8 @@ router.get('/menu', async (req,res) =>
     res.render('menu')
 })
 
+router.get('/event', async (req, res) => {
+    res.render('event')
+})
+
 module.exports = router;
