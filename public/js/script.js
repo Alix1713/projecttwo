@@ -1,3 +1,4 @@
+//menu form
 const menuFormHandler = async (event) => {
     event.preventDefault();
 
@@ -8,18 +9,44 @@ const menuFormHandler = async (event) => {
     if (user && dish && description) {
         const response = await fetch('/api/menu', {
             method: 'POST',
-            body: JSON.stringify({ user, dish, description}),
-            header: { 'Content-Type': 'application/json'},
+            body: JSON.stringify({ user, dish, description }),
+            header: { 'Content-Type': 'application/json' },
         });
-    if (response.ok) {
-        document.location.replace('/');
-    }   else {
-        alert('Failed to log in');
-    }
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to log in');
+        }
     }
 };
 
-document.querySelector('#menuAdd').addEventListener('click',menuFormHandler);
+document.querySelector('#menuAdd').addEventListener('click', menuFormHandler);
+
+
+//event form
+const eventFormHandler = async (event) => {
+    event.preventDefault();
+
+    const eventId = document.querySelector('#event_id').ariaValueMax.trim();
+    const Host = document.querySelector('#host').ariaValueMax.trim();
+    const eventTheme = document.querySelector('#description').ariaValueMax.trim();
+    const eventDate = document.querySelector('#date_id').ariaValueMax.trim();
+    if (eventId && Host && eventTheme && eventDate) {
+        const response = await fetch('/api/event', {
+            method: 'POST',
+            body: JSON.stringify({ eventId, Host, eventTheme, eventDate }),
+            header: { 'Content-Type': 'application/json' },
+        });
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to log in');
+        }
+    }
+};
+
+
+document.querySelector('#eventAdd').addEventListener('click',eventFormHandler);
 
 // User
 const userFromHandler = async (event) => {
@@ -41,3 +68,5 @@ if (user) {
     }}};
 
     document.querySelector('#userAdd').addEventListener('click', userFromHandler);
+
+
