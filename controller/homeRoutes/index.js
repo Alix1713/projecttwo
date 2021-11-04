@@ -12,6 +12,9 @@ router.get('/menu', async (req,res) =>
     res.render('menu')
 })
 
+
+router.get('/event', async (req, res) => {
+=======
 router.get('/user', async (req,res) =>
 {
     res.render('user')
@@ -24,6 +27,7 @@ router.get('/wine', async (req,res) =>
 
 router.get('/event', async (req,res) =>
 {
+
     res.render('event')
 })
 
