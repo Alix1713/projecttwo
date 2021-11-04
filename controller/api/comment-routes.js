@@ -1,19 +1,19 @@
 const router = require('express').Router();
-const { User, Comment }  = require('../../models');
-
+const { User, Comment } = require('../../models');
 
 // CREATE a comment
 router.post('/', async (req, res) => {
-    try {
-      const commentData = await Comment.create(req.body);
-      res.status(200).json(commentData);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
+  try {
+    const commentData = await Comment.create(req.body);
+    res.status(200).json(commentData);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
 
   // UPDATE a COMMENT
-router.put('/:id', async (req, res) => {
+  router.put('/:id', async (req, res) => {
     try {
       const commentData = await User.update(req.body, {
         where: {
@@ -30,8 +30,8 @@ router.put('/:id', async (req, res) => {
     }
   });
 
-   // DELETE a COMMENT
-router.delete('/:id', async (req, res) => {
+  // DELETE a COMMENT
+  router.delete('/:id', async (req, res) => {
     try {
       const commentData = await User.destroy({
         where: {
@@ -48,5 +48,5 @@ router.delete('/:id', async (req, res) => {
     }
   });
 
-  
 
+module.exports = router;

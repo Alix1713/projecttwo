@@ -12,4 +12,19 @@ router.get('/menu', async (req,res) =>
     res.render('menu')
 })
 
+router.get('/user', async (req,res) =>
+{
+    res.render('user')
+})
+
+router.get('/wine', async (req,res) =>
+{
+    res.render('wine')
+})
+
+router.get('/event', async (req,res) =>
+{
+    res.render('event')
+})
+
 module.exports = router;
