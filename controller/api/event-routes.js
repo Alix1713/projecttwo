@@ -9,17 +9,14 @@ router.post('/', async, (req, res) => {
         console.log(req.body)
         const eventData = await Event.create({
 
-<<<<<<< HEAD
       },
     post_id:
       
   })
-=======
 
->>>>>>> 544e0f463943d6eafa1479c813aeaf8933605577
         });
         res.status(200).json(eventData)
-    }catch (err) {
+    } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
@@ -64,11 +61,7 @@ router.put('/:id', async (req, res) => {
     } catch(err){
         res.status(500).json(err);
     }
-<<<<<<< HEAD
-})
-=======
     });
 
     module.exports = router;
 
->>>>>>> 544e0f463943d6eafa1479c813aeaf8933605577
