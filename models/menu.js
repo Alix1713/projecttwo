@@ -15,7 +15,7 @@ Menu.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    guest_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

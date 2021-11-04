@@ -1,20 +1,11 @@
 const router = require('express').Router();
-const { Model } = require('sequelize/types');
-const sequelize = require('../config/connetion');
+const { Event } = require('../../models');
 
- class Event extends Model{}
+console.log(Event);
 
- Event.init
- ({
-     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-    guest_id: {
+// create an event
+router.post('/', async, (req, res) => {
+    try {
+        console.log(req.body)
+        const eventData = await Event.create({
 
-      },
-    post_id:
-      
-  })
