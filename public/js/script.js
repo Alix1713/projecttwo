@@ -43,6 +43,7 @@ const eventFormHandler = async (event) => {
             alert('Failed to log in');
         }
     }
+
 };
 
 
@@ -70,7 +71,9 @@ if (email && password) {
         document.location.replace('/');
     }else {
         alert('Failed to log in');
-    }}};
+        console.log(user);
+        console.log(password);
+    }}}};
 
 
     document.querySelector('#userAdd').addEventListener('click', userFormHandler);
@@ -84,6 +87,7 @@ const guestFormHandler = async (event) => {
     event.preventDefault();
 
     const guest = document.querySelector('#user_id').ariaValueMax.trim();
+    
 
     const email = document.querySelector('#email').ariaValueMax.trim();
     if (guest && email) {
