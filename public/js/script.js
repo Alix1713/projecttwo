@@ -43,6 +43,7 @@ const eventFormHandler = async (event) => {
             alert('Failed to log in');
         }
     }
+
 };
 
 
@@ -68,8 +69,33 @@ const userFormHandler = async (event) => {
         }
     }
 };
+const email = document.querySelector('#email').ariaValueMax.trim();
+
+
+const user = document.querySelector('#user').ariaValueMax.trim();
+if (user && userId) {
+
+const password = document.querySelector('#password').ariaValueMax.trim();
+if (email && password) {
+
+    const response = await fetch('/api/user', {
+        method: 'POST',
+        body: JSON.stringify({email, password}),
+        headers: {'Content-Type': 'application/json'},
+    });
+    if(response.ok){
+        document.location.replace('/');
+    }else {
+        alert('Failed to log in');
+        console.log(user);
+        console.log(password);
+    }}}};
+
 
 // document.querySelector('#userAdd').addEventListener('click', userFormHandler);
+
+    document.querySelector('#login').addEventListener('click', userFromHandler);
+
 
 // Guest
 
@@ -83,6 +109,11 @@ const guestFormHandler = async (event) => {
     const email = document.querySelector('#email').value
     console.log('testing for email')
     console.log(email)
+
+    const guest = document.querySelector('#user_id').ariaValueMax.trim();
+    
+
+    const email = document.querySelector('#email').ariaValueMax.trim();
     if (guest && email) {
         const response = await fetch('/api/users', {
             method: 'POST',
