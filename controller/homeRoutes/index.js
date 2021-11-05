@@ -21,4 +21,8 @@ router.get("/event", async (req, res) => {
   res.render("event");
 });
 
+router.get("/guest", async (req,res) => {
+  res.render("guest");
+});
+
 module.exports = router;
