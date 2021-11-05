@@ -2,8 +2,8 @@
 const menuFormHandler = async (event) => {
   event.preventDefault();
 
-  const user = document.querySelector("#user").ariaValueMax.trim();
-  const dish = document.querySelector("#dish").ariaValueMax.trim();
+  const user = document.querySelector("#user").trim();
+  const dish = document.querySelector("#dish").trim();
   const description = document
     .querySelector("#description")
     .ariaValueMax.trim();
@@ -22,16 +22,16 @@ const menuFormHandler = async (event) => {
   }
 };
 
-document.querySelector("#menuAdd").addEventListener("click", menuFormHandler);
+// document.querySelector("#menuAdd").addEventListener("click", menuFormHandler);
 
 //event form
 const eventFormHandler = async (event) => {
   event.preventDefault();
 
-  const eventId = document.querySelector("#event_id").ariaValueMax.trim();
-  const Host = document.querySelector("#host").ariaValueMax.trim();
-  const eventTheme = document.querySelector("#description").ariaValueMax.trim();
-  const eventDate = document.querySelector("#date_id").ariaValueMax.trim();
+  const eventId = document.querySelector("#event_id").trim();
+  const Host = document.querySelector("#host").trim();
+  const eventTheme = document.querySelector("#description").trim();
+  const eventDate = document.querySelector("#date_id").trim();
   if (eventId && Host && eventTheme && eventDate) {
     const response = await fetch("/api/event", {
       method: "POST",
@@ -46,17 +46,17 @@ const eventFormHandler = async (event) => {
   }
 };
 
-document.querySelector("#eventAdd").addEventListener("click", eventFormHandler);
+// document.querySelector("#eventAdd").addEventListener("click", eventFormHandler);
 
 // User
 const userFormHandler = async (event) => {
   event.preventDefault();
 
-  const email = document.querySelector("#email").ariaValueMax.trim();
+  const email = document.querySelector("#email").trim();
 
-  const user = document.querySelector("#user").ariaValueMax.trim();
+  const user = document.querySelector("#user").trim();
   if (user && userId) {
-    const password = document.querySelector("#password").ariaValueMax.trim();
+    const password = document.querySelector("#password").trim();
     if (email && password) {
       const response = await fetch("/api/user", {
         method: "POST",
@@ -74,18 +74,18 @@ const userFormHandler = async (event) => {
   }
 };
 
-document.querySelector("#userAdd").addEventListener("click", userFormHandler);
+// document.querySelector("#userAdd").addEventListener("click", userFormHandler);
 
-document.querySelector("#login").addEventListener("click", userFromHandler);
+// document.querySelector("#login").addEventListener("click", userFromHandler);
 
 // Guest
 
 const guestFormHandler = async (event) => {
   event.preventDefault();
 
-  const guest = document.querySelector("#user_id").ariaValueMax.trim();
+  const guest = document.querySelector("#user_id").trim();
 
-  const email = document.querySelector("#email").ariaValueMax.trim();
+  const email = document.querySelector("#email").trim();
   if (guest && email) {
     const response = await fetch("/api/user", {
       method: "POST",
@@ -100,4 +100,4 @@ const guestFormHandler = async (event) => {
   }
 };
 
-document.querySelector("#GuestAdd").addEventListener("click", guestFormHandler);
+// document.querySelector("#GuestAdd").addEventListener("click", guestFormHandler);
