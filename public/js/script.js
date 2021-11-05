@@ -1,3 +1,5 @@
+const { values } = require("sequelize/types/lib/operators");
+
 //menu form
 const menuFormHandler = async (event) => {
   event.preventDefault();
@@ -35,6 +37,72 @@ const eventFormHandler = async (event) => {
       body: JSON.stringify({ eventId, Host, eventTheme, eventDate }),
       header: { "Content-Type": "application/json" },
     });
+
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert("Failed to log in");
+    }
+  }
+};
+
+document.querySelector("eventAdd").addEventListener("click", eventFormHandler);
+
+// User
+const userFormHandler = async (event) => {
+  event.preventDefault();
+
+  const email = document.getElementById('email').values.trim();
+  const password = document.getElementById('password').values.trim();
+  // const user = document.getElementById("user").trim();
+  
+  // if (user && userId) {
+    if (email && password) {
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (response.ok) {
+        document.location.replace('/home');
+      } else {
+        alert('Failed to log in');
+        console.log(user);
+        console.log(password);
+      }
+    }
+  // }
+};
+
+document.getElementById('.login-form').addEventListener('submit', userFormHandler);
+
+// document.querySelector("login").addEventListener("click", userFromHandler);
+
+// Guest
+
+const guestFormHandler = async (event) => {
+  event.preventDefault();
+
+  const guest = document.getElementById("user_id").values.trim();
+  const email = document.getElementById("email").values.trim();
+  
+  if (guest && email) {
+    const response = await fetch("/api/user", {
+      method: "POST",
+      body: JSON.stringify({ guest }),
+      headers: { "Content-Type": "application/json" },
+    });
+    // 
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert("Failed to log in");
+    }
+  }
+};
+
+document.querySelector("#GuestAdd").addEventListener("click", guestFormHandler);
+=======
 
     // if (response.ok) {
     //   document.location.replace("/");
@@ -77,26 +145,3 @@ const eventFormHandler = async (event) => {
 
 // // document.querySelector("#login").addEventListener("click", userFromHandler);
 
-// // Guest
-
-// const guestFormHandler = async (event) => {
-//   event.preventDefault();
-
-//   const guest = document.querySelector("#user_id").trim();
-
-//   const email = document.querySelector("#email").trim();
-//   if (guest && email) {
-//     const response = await fetch("/api/user", {
-//       method: "POST",
-//       body: JSON.stringify({ guest }),
-//       headers: { "Content-Type": "application/json" },
-//     });
-//     if (response.ok) {
-//       document.location.replace("/");
-//     } else {
-//       alert("Failed to log in");
-//     }
-//   }
-// };
-
-// // document.querySelector("#GuestAdd").addEventListener("click", guestFormHandler);
