@@ -1,3 +1,5 @@
+const { values } = require("sequelize/types/lib/operators");
+
 //menu form
 const menuFormHandler = async (event) => {
   event.preventDefault();
@@ -46,35 +48,35 @@ const eventFormHandler = async (event) => {
   }
 };
 
-// document.querySelector("#eventAdd").addEventListener("click", eventFormHandler);
+document.querySelector("#eventAdd").addEventListener("click", eventFormHandler);
 
 // User
 const userFormHandler = async (event) => {
   event.preventDefault();
 
-  const email = document.querySelector("#email").trim();
-
-  const user = document.querySelector("#user").trim();
-  if (user && userId) {
-    const password = document.querySelector("#password").trim();
+  const email = document.getElementById('email').values.trim();
+  const password = document.getElementById('password').values.trim();
+  // const user = document.getElementById("user").trim();
+  
+  // if (user && userId) {
     if (email && password) {
-      const response = await fetch("/api/user", {
-        method: "POST",
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
         body: JSON.stringify({ email, password }),
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' },
       });
       if (response.ok) {
-        document.location.replace("/");
+        document.location.replace('/home');
       } else {
-        alert("Failed to log in");
+        alert('Failed to log in');
         console.log(user);
         console.log(password);
       }
     }
-  }
+  // }
 };
 
-// document.querySelector("#userAdd").addEventListener("click", userFormHandler);
+document.getElementById('.login-form').addEventListener('submit', userFormHandler);
 
 // document.querySelector("#login").addEventListener("click", userFromHandler);
 
@@ -83,15 +85,16 @@ const userFormHandler = async (event) => {
 const guestFormHandler = async (event) => {
   event.preventDefault();
 
-  const guest = document.querySelector("#user_id").trim();
-
-  const email = document.querySelector("#email").trim();
+  const guest = document.getElementById("user_id").values.trim();
+  const email = document.getElementById("email").values.trim();
+  
   if (guest && email) {
     const response = await fetch("/api/user", {
       method: "POST",
       body: JSON.stringify({ guest }),
       headers: { "Content-Type": "application/json" },
     });
+    // 
     if (response.ok) {
       document.location.replace("/");
     } else {
@@ -100,4 +103,4 @@ const guestFormHandler = async (event) => {
   }
 };
 
-// document.querySelector("#GuestAdd").addEventListener("click", guestFormHandler);
+document.querySelector("#GuestAdd").addEventListener("click", guestFormHandler);

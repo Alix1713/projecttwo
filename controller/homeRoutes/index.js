@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-router.get("/", async (req, res) => {
+router.get("/home", async (req, res) => {
   res.render("homepage");
 
   //res.render handlebars here review previous activity!!
@@ -20,5 +20,9 @@ router.get("/event", async (req, res) => {
 router.get("/guest", async (req,res) => {
   res.render("guest");
 });
+
+// router.get("/login", async (req, res) => {
+//   res.render("/")
+// })
 
 module.exports = router;
